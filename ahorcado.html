@@ -1,6 +1,7 @@
-<HTML>
-<HEAD>
-<TITLE>Ahorcado</TITLE>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ahorcado</title>
 <style type="text/css">
    #image {
   height: 256px;
@@ -10,7 +11,7 @@ url('./recursos_Graficos/Ahorcado_sprintline.png') 0px 0px;
 }
 </style>
 
-<SCRIPT LANGUAGE=JavaScript>
+<script LANGUAGE=JavaScript>
 
 var palabra
 var partes = 0
@@ -126,12 +127,15 @@ function FinJuego(resultado) {
         solucion += palabra[x]
      alert("perdio La palabra era: " + solucion)
    }
-}
 
-</SCRIPT>
-</HEAD>
-<BODY>
-<H2>Ahorcado</H2>
+   console.log(resultado)
+} 
+
+</script>
+</head>
+<body>
+<h1>Ahorcado</h1>
+
 <FORM NAME=visor>
 
    Colocar palabra: <INPUT id="textoahorcado" type="password" NAME=textoahorcado SIZE=50>
