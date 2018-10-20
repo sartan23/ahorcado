@@ -2,7 +2,7 @@
 <HEAD>
 <TITLE>Ahorcado</TITLE>
 <style type="text/css">
-   .image {
+   #image {
   height: 256px;
   width: 200px;
 background: 
@@ -27,8 +27,10 @@ function ObtienePalabra() {
 
 
 function DibujaHombre() {
-   
-document.getElementsByclass("image").style.backgroundPosition =`256px 0px`;
+  var posicion = partes*-200;
+  var idDibujito =  document.getElementById("image");
+  idDibujito.style.backgroundPosition =posicion+' 0px';
+
 }
 
 
@@ -70,16 +72,19 @@ function Juega(visor, letra) {
       NuevaLetra(visor, letra)
      
       var acierto = DibujaLetra(visor, letra)
-    
-      if (!acierto)
+    console.log(acierto);
+      if (acierto==false)
+        partes++;
          DibujaHombre()
          if (partes == 8)
-         FinJuego(false)
+        //console.log(partes)
+         FinJuego(true)
       else if (CompruebaPalabra(visor))
          FinJuego(true)
       } else {
          alert('Pulsa Juego nuevo para comenzar una partida nueva.')
    }
+  console.log(partes)
 }
 
 function IniciaJuego(visor) {
@@ -124,7 +129,6 @@ function FinJuego(resultado) {
 }
 
 </SCRIPT>
-
 </HEAD>
 <BODY>
 <H2>Ahorcado</H2>
@@ -134,7 +138,7 @@ function FinJuego(resultado) {
    <CENTER>
    <TABLE width=600>
    <TR>
-      <TD colspan=3 width=150 ALIGN=center><img class="image" >
+      <TD colspan=3 width=150 ALIGN=center><img id="image" >
       <TD colspan=3 WIDTH=150 ALIGN=center><textarea name=displayLetras cols=15 rows=6></textarea>
       <TD width=200>
    <TR>
